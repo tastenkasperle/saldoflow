@@ -1,0 +1,17 @@
+# Python / Virtual Environment
+    __pycache__/
+    *.py[cod]
+    *$py.class
+    .venv/
+    venv/
+    ENV/
+
+    # SQLite Datenbank (lokale Testdaten)
+    *.db
+    *.sqlite3
+
+    # IDE / OS Dateien
+    .vscode/
+    .idea/
+    .DS_Store
+    Thumbs.db
