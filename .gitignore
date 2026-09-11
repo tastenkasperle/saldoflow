@@ -15,3 +15,6 @@
     .idea/
     .DS_Store
     Thumbs.db
+
+    # KI-Gedächtnis / Lokale Savegames
+    SAVEGAME_*.md
