@@ -39,13 +39,34 @@
 
 ---
 
-## 🏛 Architektur & Schichtenmodell
+## 🏛 Architektur-Philosophie: Strikte Schichtentrennung (Clean Architecture)
 
-Die Anwendung folgt dem strikten **3-Schichten-Modell**:
+SaldoFlow setzt auf eine bewusste **Entkopplung der Komponenten (Clean Architecture)**. Das Herzstück der Anwendung ist vollkommen unabhängig von Frameworks, Datenbanken oder Benutzeroberflächen.
 
-* **Präsentationsschicht (`src/web/`):** Flask Application Factory & Jinja2 Templates mit Pico.css.
-* **Geschäftslogik (`src/domain/`):** Objektorientierte Domänenmodelle (`Transaction`, `BudgetBook`).
-* **Datenhaltung (`src/persistence/`):** SQLite Repository (`saldoflow.db`) mit sauberen SQL-Queries.
+```
+       +---------------------------------------------+
+       |   Präsentationsschicht (Flask / Jinja2 UI)  |
+       +----------------------+----------------------+
+                              | (nutzt)
+                              v
+       +----------------------+----------------------+
+       |   Geschäftslogik / Domäne (Pure Python OOP)  |
+       +----------------------+----------------------+
+                              ^ (nutzt)
+                              |
+       +----------------------+----------------------+
+       |   Persistenzschicht (SQLite Repository)     |
+       +---------------------------------------------+
+```
+
+### 💡 Warum dieser Aufbau? (Didaktischer & Architektonischer Nutzen)
+
+1. **Strikte Unabhängigkeit & Testbarkeit (Lose Kopplung):**  
+   Die Geschäftslogik (`src/domain/models.py`) enthält reine Python-Objekte. Sie benötigt weder Flask noch SQLite. Das bedeutet: Wenn die Datenbank von SQLite auf PostgreSQL umgestellt wird, bleibt der gesamte Domänencode unberührt.
+2. **Didaktischer Verzicht auf ORM (z. B. SQLAlchemy) in Sprint 1:**  
+   Um die Kernkonzepte der **objektorientierten Programmierung (OOP)** sowie **reines SQL** (`schema.sql` & `sqlite3`) tiefgehend zu verstehen, erfolgt das Datenmapping bewusst manuell im Repository-Pattern. *Ein Refactoring auf ein ORM ist als Lernziel für Folgesprints vorgesehen.*
+3. **Parallele Entwicklung im Team:**  
+   Durch die klare Trennung der 3 Schichten können alle Teammitglieder zeitgleich auf eigenen Feature-Branches entwickeln, ohne dass es zu Konflikten im Code kommt.
 
 ---
 
@@ -62,8 +83,8 @@ Eine ausführliche Übersicht aller Konzepte und Anforderungsspezifikationen bef
 ---
 
 ## 👥 Entwicklerteam
-
+ 
 * **Teamleiter / Integration & Web-Routing:** Tastenkasperle
-* **Entwickler A (Domain Layer):** Geschäftslogik & Berechnungen
-* **Entwickler B (Persistence Layer):** SQLite Schema & Repository
-* **Entwickler C (Presentation Layer):** HTML Formular & Dashboard Styling
+* **Entwickler A (Domain Layer / OOP):** André
+* **Entwickler B (Persistence Layer / SQLite DB):** Christopher
+* **Entwickler C (Presentation Layer / Web-UI):** Julija
