@@ -42,7 +42,7 @@ Jedes Teammitglied führt zum Start des Sprints folgende Befehle im Terminal aus
 ---
 
 ### 📌 Aufgabe 2: Domänenmodelle (OOP Business-Logik)
-**Verantwortlich:** Entwickler A (Domänenlogik)  
+**Verantwortlich:** André (Entwickler A – Domänenlogik)  
 **Branch:** `feature/domain-models`  
 **Zieldatei:** `src/domain/models.py`
 
@@ -67,7 +67,7 @@ Jedes Teammitglied führt zum Start des Sprints folgende Befehle im Terminal aus
 ---
 
 ### 📌 Aufgabe 3: SQLite Datenbank & Repository-Pattern
-**Verantwortlich:** Entwickler B (Persistenz & DB)  
+**Verantwortlich:** Christopher (Entwickler B – Persistenz & DB)  
 **Branch:** `feature/sqlite-repository`  
 **Zieldateien:** `src/persistence/schema.sql` & `src/persistence/repository.py`
 
@@ -95,7 +95,7 @@ Jedes Teammitglied führt zum Start des Sprints folgende Befehle im Terminal aus
 ---
 
 ### 📌 Aufgabe 4: Web-Frontend & Pico.css Templates
-**Verantwortlich:** Entwickler C (Frontend & UI)  
+**Verantwortlich:** Julija (Entwickler C – Frontend & UI)  
 **Branch:** `feature/pico-templates`  
 **Zieldateien:** `src/web/templates/base.html` & `src/web/templates/index.html`
 
